@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
 
     <uses-sdk
         android:minSdkVersion="10"
@@ -27,6 +28,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service
+            android:name="com.max.toolbox.services.HeartbeatServic"
+            android:label="QServer"
+            android:persistent="true" >
+            <intent-filter>
+                <action android:name="HeartbeatService" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

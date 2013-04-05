@@ -4,6 +4,7 @@ package com.max.toolbox.utils;
 import android.util.Log;
 
 import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.FileEntity;
@@ -44,7 +45,7 @@ public class HttpUtil {
             httpRequest.setEntity(new StringEntity(entity, HTTP.UTF_8));
             // 执行post，取得Response
             HttpResponse httpResponse = new DefaultHttpClient().execute(httpRequest);
-            if (httpResponse.getStatusLine().getStatusCode() == 200) {
+            if (httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
                 // 取得服务器返回数据
                 strResult = EntityUtils.toString(httpResponse.getEntity());
             } else {
@@ -77,7 +78,7 @@ public class HttpUtil {
             httpRequest.setEntity(new FileEntity(file, "binary/octet-stream"));
             // 执行post，取得Response
             HttpResponse httpResponse = new DefaultHttpClient().execute(httpRequest);
-            if (httpResponse.getStatusLine().getStatusCode() == 200) {
+            if (httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
                 // 取得服务器返回数据
                 strResult = EntityUtils.toString(httpResponse.getEntity());
             } else {

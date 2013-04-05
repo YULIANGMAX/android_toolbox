@@ -3,7 +3,7 @@ package com.max.toolbox.application;
 
 import android.app.Application;
 
-import com.max.toolbox.utils.ErrorLogHandler;
+import com.max.toolbox.handler.ErrorLogHandler;
 
 public class BaseApplication extends Application {
     

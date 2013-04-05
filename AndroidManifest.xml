@@ -36,6 +36,7 @@
 
         <service
             android:name="com.max.toolbox.services.HeartbeatServic"
+            android:exported="false"
             android:persistent="true" >
             <intent-filter>
                 <action android:name="HeartbeatService" />

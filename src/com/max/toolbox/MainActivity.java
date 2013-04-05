@@ -2,6 +2,7 @@
 package com.max.toolbox;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.Menu;
@@ -18,6 +19,13 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        startRecVoice();
+//        startHeartbeatService();
+        
+    }
+    
+    private void startRecVoice() {
+        setContentView(R.layout.activity_recvoice);
         String path = Environment.getExternalStorageDirectory().toString()+"/ttt/xxx/ddd/rrr/4.aac";
         final MediaUtil mediaUtil = new MediaUtil();
         mediaUtil.recVoice(path);
@@ -39,6 +47,12 @@ public class MainActivity extends Activity {
                 mediaUtil.stopRec();
             }
         });
+    }
+    
+    private void startHeartbeatService() {
+        Intent serviceIntent = new Intent("HeartbeatService");  
+        serviceIntent.putExtra("url","http://www.xxx.com");  
+        startService(serviceIntent);  
     }
 
     @Override

@@ -18,7 +18,6 @@ public class VersionUtil {
     private static String package_name;
 
     public VersionUtil(String package_name) {
-        super();
         VersionUtil.package_name = package_name;
     }
 

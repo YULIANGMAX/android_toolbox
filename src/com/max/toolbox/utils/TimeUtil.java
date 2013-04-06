@@ -25,6 +25,24 @@ public class TimeUtil {
     private static final int DAY = 24 * 60 * 60;// 天
     private static final int HOUR = 60 * 60;// 小时
     private static final int MINUTE = 60;// 分钟
+    
+    /**
+     * 自定义格式获取时间字符串
+     * @param format 格式
+     * @return
+     */
+    public static String getDate(String format) {
+        SimpleDateFormat formatBuilder = new SimpleDateFormat(format, Locale.CHINA);
+        return formatBuilder.format(new Date());
+    }
+
+    /**
+     * 获取hh:mm:ss格式时间字符串
+     * @return
+     */
+    public static String getDate() {
+        return getDate("hh:mm:ss");
+    }
 
     /**
      * 根据时间戳获取描述性时间，如3分钟前，1天前

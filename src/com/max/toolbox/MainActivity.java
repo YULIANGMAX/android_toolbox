@@ -26,7 +26,7 @@ public class MainActivity extends Activity {
     }
     
     private void startRecVoice() {
-        setContentView(R.layout.activity_recvoice);
+        setContentView(R.layout.recvoice);
         String path = Environment.getExternalStorageDirectory().toString()+"/ttt/xxx/ddd/rrr/4.aac";
         final MediaUtil mediaUtil = new MediaUtil();
         mediaUtil.recVoice(path);

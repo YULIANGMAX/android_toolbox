@@ -1,3 +1,4 @@
+
 package com.max.toolbox.utils;
 
 import android.content.Context;
@@ -11,7 +12,7 @@ import android.net.NetworkInfo;
  * @版本 1.0
  */
 public class NetworkUtil {
-    
+
     /**
      * 网络是否可用
      * 

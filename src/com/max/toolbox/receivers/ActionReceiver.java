@@ -18,7 +18,7 @@ import android.content.Intent;
  * @ÈÕÆÚ 2013-4-5
  * @°æ±¾ 1.0
  */
-public class ExceptionReceiver extends BroadcastReceiver{
+public class ActionReceiver extends BroadcastReceiver{
 
     @Override
     public void onReceive(Context context, Intent intent) {

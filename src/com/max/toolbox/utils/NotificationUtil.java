@@ -26,11 +26,10 @@ public class NotificationUtil {
      */
     public NotificationManager addNotificaction(Context mContext, int icon, String[] texts, String action) {
         NotificationManager manager = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
-        // 创建一个Notification
         Notification notification = new Notification();
-        // 设置显示在手机最上边的状态栏的图标
+        // 提醒图标
         notification.icon = icon;
-        // 当notification被放到状态栏上的时候，提示内容
+        // 提醒内容
         notification.tickerText = texts[0];
 
         /***
@@ -39,7 +38,7 @@ public class NotificationUtil {
          * notification.deleteIntent 当当前notification被移除时执行的intent
          * notification.vibrate 当手机震动时，震动周期设置
          */
-        // 添加声音提示
+        // 声音提示
         notification.defaults = Notification.DEFAULT_SOUND;
         // audioStreamType的值必须AudioManager中的值，代表着响铃的模式
         notification.audioStreamType = android.media.AudioManager.ADJUST_LOWER;
@@ -51,7 +50,7 @@ public class NotificationUtil {
         // Uri.withAppendedPath(Audio.Media.INTERNAL_CONTENT_URI, "6");
         Intent intent = new Intent(action);
         PendingIntent pendingIntent = PendingIntent.getActivity(mContext, 0, intent, PendingIntent.FLAG_ONE_SHOT);
-        // 点击状态栏的图标出现的提示信息设置
+        // 通知栏展开后的信息设置
         notification.setLatestEventInfo(mContext, texts[1], texts[2], pendingIntent);
         manager.notify(icon, notification);
         return manager;

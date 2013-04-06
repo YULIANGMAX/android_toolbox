@@ -13,8 +13,10 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 
 /**
@@ -36,8 +38,8 @@ public class HttpUtil {
         // 新建post对象，设置头参数
         HttpPost httpRequest = new HttpPost(url);
         // httpRequest.addHeader("Authorization", mToken);
-        httpRequest.addHeader("Content-Type", "application/json");
-        httpRequest.addHeader("charset", HTTP.UTF_8);
+        // httpRequest.addHeader("Content-Type", "application/json");
+        // httpRequest.addHeader("charset", HTTP.UTF_8);
 
         String strResult = null;
         try {
@@ -46,8 +48,16 @@ public class HttpUtil {
             // 执行post，取得Response
             HttpResponse httpResponse = new DefaultHttpClient().execute(httpRequest);
             if (httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
-                // 取得服务器返回数据
+                // 取得服务器返回数据，直接读取方式
                 strResult = EntityUtils.toString(httpResponse.getEntity());
+
+                // 取得服务器返回数据，缓冲流单行读取
+//                StringBuilder builder = new StringBuilder(); 
+//                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(httpResponse.getEntity().getContent())); 
+//                for (String s = bufferedReader.readLine(); s != null; s = bufferedReader.readLine()) { 
+//                    builder.append(s); 
+//                } 
+//                strResult = builder.toString();
             } else {
                 // 返回错误信息
                 Log.e("HTTP_ERROR", httpResponse.getStatusLine().toString());

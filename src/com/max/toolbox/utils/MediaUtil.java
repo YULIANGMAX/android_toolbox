@@ -1,6 +1,8 @@
 
 package com.max.toolbox.utils;
 
+import android.media.MediaPlayer;
+import android.media.MediaPlayer.OnCompletionListener;
 import android.media.MediaRecorder;
 import android.os.Environment;
 
@@ -52,20 +54,20 @@ public class MediaUtil {
 
     /**
      * 开始录音
+     * 
+     * @throws IOException
+     * @throws
      */
-    public void startRec() {
+    public void startRec() throws IOException {
         if (mRecorder != null) {
-            try {
-                mRecorder.prepare();
-                mRecorder.start();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            mRecorder.prepare();
+            mRecorder.start();
         }
     }
 
     /**
      * 停止录音。录音并写入文件成功返回文件路径，不成功返回null并删除文件
+     * 
      * @return 录音文件路径
      */
     public String stopRec() {
@@ -82,6 +84,25 @@ public class MediaUtil {
         } else {
             return file.getAbsolutePath();
         }
+    }
+
+    /**
+     * 播放声音
+     * @param path 音频文件路径
+     * @throws IOException
+     */
+    public void playVoice(String path) throws IOException {
+        MediaPlayer mediaPlayer = new MediaPlayer();
+        mediaPlayer.reset();
+        mediaPlayer.setDataSource(path);
+        mediaPlayer.prepare();
+        mediaPlayer.setOnCompletionListener(new OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                mp.release();
+            }
+        });
+        mediaPlayer.start();
     }
 
 }

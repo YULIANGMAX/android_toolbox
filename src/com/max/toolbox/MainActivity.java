@@ -10,8 +10,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-import com.example.android_utils.R;
 import com.max.toolbox.utils.MediaUtil;
+
+import java.io.IOException;
 
 public class MainActivity extends Activity {
 
@@ -36,7 +37,11 @@ public class MainActivity extends Activity {
             
             @Override
             public void onClick(View v) {
-                mediaUtil.startRec();
+                try {
+                    mediaUtil.startRec();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
         stop = (Button) findViewById(R.id.stop);

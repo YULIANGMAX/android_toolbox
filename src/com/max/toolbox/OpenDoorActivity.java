@@ -12,11 +12,6 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-/**
- * ≤‚ ‘
- * @author YULIANGMAX
- *
- */
 public class OpenDoorActivity extends Activity {
 
     private LinearLayout layout;

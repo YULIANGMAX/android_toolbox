@@ -3,18 +3,19 @@ package com.max.toolbox.utils;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * @类名 FileUtil
+ * @类名 IOUtil
  * @作者 YULIANGMAX
  * @日期 2013-4-5
  * @版本 1.0
  */
-public class FileUtil {
+public class IOUtil {
 
     /**
      * 输入流保存到文件
@@ -59,6 +60,37 @@ public class FileUtil {
             target.delete();
             return null;
         }
+    }
+    
+    /**
+     * 字节数组转输入流
+     * 
+     * @param data 字节数组
+     * @return 输入流
+     */
+    public InputStream Byte2InputStream(byte[] data) {
+        ByteArrayInputStream bais = new ByteArrayInputStream(data);
+        return bais;
+    }
+
+    /**
+     * 输入流转字节数组
+     * 
+     * @param is 输入流
+     * @return 字节数组
+     */
+    public byte[] InputStream2Bytes(InputStream is) {
+        String str = "";
+        byte[] readByte = new byte[1024];
+        try {
+            while (is.read(readByte, 0, 1024) != -1) {
+                str += new String(readByte).trim();
+            }
+            return str.getBytes();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }

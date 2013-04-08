@@ -1,5 +1,5 @@
 
-package com.max.toolbox.utils;
+package com.max.toolbox.utils.device;
 
 import android.app.Activity;
 import android.app.Service;
@@ -12,7 +12,7 @@ import android.os.Vibrator;
 import android.view.Display;
 import android.view.View;
 
-public class DeviceUtil {
+public class DevCtrlUtil {
 
     /**
      * ºô½ÐÖ¸¶¨ºÅÂë

@@ -1,5 +1,5 @@
 
-package com.max.toolbox.utils;
+package com.max.toolbox.utils.system;
 
 import android.app.Activity;
 import android.util.DisplayMetrics;

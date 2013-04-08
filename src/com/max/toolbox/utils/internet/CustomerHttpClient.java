@@ -1,5 +1,5 @@
 
-package com.max.toolbox.utils;
+package com.max.toolbox.utils.internet;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;

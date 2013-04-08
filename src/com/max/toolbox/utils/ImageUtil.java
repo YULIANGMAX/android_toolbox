@@ -269,7 +269,7 @@ public class ImageUtil {
      * @param bitmap Bitmap对象
      * @return 输入流
      */
-    public InputStream bitmap2inputStream(Bitmap bitmap) {
+    public static InputStream bitmap2inputStream(Bitmap bitmap) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
         InputStream is = new ByteArrayInputStream(baos.toByteArray());
@@ -284,7 +284,7 @@ public class ImageUtil {
      *            表示图片质量最好，低压缩比。PNG格式为无损格式，忽略此参数。
      * @return 输入流
      */
-    public InputStream bitmap2inputStream(Bitmap bitmap, int quality) {
+    public static InputStream bitmap2inputStream(Bitmap bitmap, int quality) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG, quality, baos);
         InputStream is = new ByteArrayInputStream(baos.toByteArray());
@@ -297,7 +297,7 @@ public class ImageUtil {
      * @param is 输入流
      * @return Bitmap对象
      */
-    public Bitmap inputStream2bitmap(InputStream is) {
+    public static Bitmap inputStream2bitmap(InputStream is) {
         return BitmapFactory.decodeStream(is);
     }
 
@@ -307,7 +307,7 @@ public class ImageUtil {
      * @param drawable Drawable对象
      * @return 输入流
      */
-    public InputStream drawable2inputStream(Drawable drawable) {
+    public static InputStream drawable2inputStream(Drawable drawable) {
         Bitmap bitmap = drawable2bitmap(drawable);
         return bitmap2inputStream(bitmap);
     }
@@ -318,7 +318,7 @@ public class ImageUtil {
      * @param is 输入流
      * @return Drawable对象
      */
-    public Drawable inputStream2drawable(InputStream is) {
+    public static Drawable inputStream2drawable(InputStream is) {
         Bitmap bitmap = inputStream2bitmap(is);
         return bitmap2drawable(bitmap);
     }

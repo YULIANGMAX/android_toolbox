@@ -1,5 +1,5 @@
 
-package com.max.toolbox.utils;
+package com.max.toolbox.utils.internet;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

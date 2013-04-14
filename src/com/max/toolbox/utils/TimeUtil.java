@@ -164,6 +164,26 @@ public class TimeUtil {
         }
         return sdf.format(time);
     }
+    
+    /**
+     * 比较两个日期之间的大小
+     * 
+     * @param d1
+     * @param d2
+     * @return 前者大于后者返回true 反之false
+     */
+    public boolean compareDate(Date d1, Date d2) {
+        Calendar c1 = Calendar.getInstance();
+        Calendar c2 = Calendar.getInstance();
+        c1.setTime(d1);
+        c2.setTime(d2);
+        int result = c1.compareTo(c2);
+        if (result >= 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     public static void main(String[] args) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss", Locale.CHINA);

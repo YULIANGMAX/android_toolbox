@@ -2,12 +2,12 @@
 package com.max.toolbox.utils;
 
 /**
- * @类名 DisplayUnitUtil
+ * @类名 UnitUtil
  * @作者 YULIANGMAX
  * @日期 2013-4-6
  * @版本 1.0
  */
-public class DisplayUnitUtil {
+public class UnitUtil {
 
     /**
      * 将px值转换为dip或dp值，保证尺寸大小不变

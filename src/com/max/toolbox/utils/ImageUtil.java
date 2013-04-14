@@ -19,11 +19,13 @@ import android.graphics.Shader.TileMode;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * @类名 ImageUtil
@@ -62,7 +64,7 @@ public class ImageUtil {
     }
 
     /**
-     * 将Bitmap转化为字节数组
+     * Bitmap转字节数组
      * 
      * @param bitmap Bitmap对象
      * @return 字节数组
@@ -83,7 +85,7 @@ public class ImageUtil {
     }
 
     /**
-     * 将byte数组转化为bitmap
+     * 字节数组转bitmap
      * 
      * @param data 字节数组
      * @return Bitmap对象
@@ -96,7 +98,7 @@ public class ImageUtil {
     }
 
     /**
-     * 将Drawable转化为Bitmap
+     * Drawable转Bitmap
      * 
      * @param drawable Drawable对象
      * @return Bitmap对象
@@ -115,12 +117,12 @@ public class ImageUtil {
     }
 
     /**
-     * 将bitmap转化为Drawable
+     * bitmap转Drawable
      * 
      * @param bitmap Bitmap对象
      * @return Drawable对象
      */
-    public static Drawable bitmap2Drawable(Bitmap bitmap) {
+    public static Drawable bitmap2drawable(Bitmap bitmap) {
         if (bitmap == null) {
             return null;
         }
@@ -259,6 +261,66 @@ public class ImageUtil {
         paint.setXfermode(new PorterDuffXfermode(Mode.DST_IN));
         canvas.drawRect(0, height, width, bitmapWithReflection.getHeight() + reflectionGap, paint);
         return bitmapWithReflection;
+    }
+
+    /**
+     * Bitmap转输入流
+     * 
+     * @param bitmap Bitmap对象
+     * @return 输入流
+     */
+    public static InputStream bitmap2inputStream(Bitmap bitmap) {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        InputStream is = new ByteArrayInputStream(baos.toByteArray());
+        return is;
+    }
+
+    /**
+     * Bitmap转输入流
+     * 
+     * @param bitmap Bitmap对象
+     * @param quality 图片质量，范围0-100。0 表示文件最小，高压缩比；100
+     *            表示图片质量最好，低压缩比。PNG格式为无损格式，忽略此参数。
+     * @return 输入流
+     */
+    public static InputStream bitmap2inputStream(Bitmap bitmap, int quality) {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, quality, baos);
+        InputStream is = new ByteArrayInputStream(baos.toByteArray());
+        return is;
+    }
+
+    /**
+     * 输入流转Bitmap
+     * 
+     * @param is 输入流
+     * @return Bitmap对象
+     */
+    public static Bitmap inputStream2bitmap(InputStream is) {
+        return BitmapFactory.decodeStream(is);
+    }
+
+    /**
+     * Drawable转输入流
+     * 
+     * @param drawable Drawable对象
+     * @return 输入流
+     */
+    public static InputStream drawable2inputStream(Drawable drawable) {
+        Bitmap bitmap = drawable2bitmap(drawable);
+        return bitmap2inputStream(bitmap);
+    }
+
+    /**
+     * 输入流转Drawable
+     * 
+     * @param is 输入流
+     * @return Drawable对象
+     */
+    public static Drawable inputStream2drawable(InputStream is) {
+        Bitmap bitmap = inputStream2bitmap(is);
+        return bitmap2drawable(bitmap);
     }
 
 }

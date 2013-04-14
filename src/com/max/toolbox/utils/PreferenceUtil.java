@@ -6,12 +6,12 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
 /**
- * @类名 ShareDataUtil
+ * @类名 PreferenceUtil
  * @作者 YULIANGMAX
  * @日期 2013-4-6
  * @版本 1.0
  */
-public class ShareDataUtil {
+public class PreferenceUtil {
 
     private static SharedPreferences sp;
 

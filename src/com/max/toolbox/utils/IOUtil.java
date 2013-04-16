@@ -31,7 +31,13 @@ public class IOUtil {
         BufferedOutputStream outBuff = null;
         try {
             if (!target.exists()) {
-                target.createNewFile();
+                String dir = targetPath.substring(0, targetPath.lastIndexOf("/"));
+                new File(dir).mkdirs();
+                try {
+                    target.createNewFile();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
             inBuff = new BufferedInputStream(source);
             outBuff = new BufferedOutputStream(new FileOutputStream(target));

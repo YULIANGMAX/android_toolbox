@@ -85,9 +85,9 @@ public class DragListView extends ListView {
         final float x = event.getX();
         final float y = event.getY();
 
-        if (getWidth() - x > 30) {
-            return super.onInterceptTouchEvent(event);// 不位于拖拽区域，直接返回
-        }
+        // if (getWidth() - x > 30) {
+        // return super.onInterceptTouchEvent(event);// 不位于拖拽区域，直接返回
+        // }
 
         switch (action) {
             case MotionEvent.ACTION_DOWN:

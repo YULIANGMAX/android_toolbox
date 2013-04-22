@@ -11,6 +11,8 @@
     <com.test.draglist.view.DragListView
         android:id="@+id/dragListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:cacheColorHint="@android:color/transparent" 
+        android:listSelector="@android:color/transparent"/>
 
 </RelativeLayout>

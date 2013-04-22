@@ -40,8 +40,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.max.toolbox.MainActivity" >
-        </activity>
+        <activity android:name="com.max.toolbox.MainActivity" />
+        <activity android:name="com.max.toolbox.DragListActivity" />
 
         <service
             android:name="com.max.toolbox.services.HeartbeatServic"

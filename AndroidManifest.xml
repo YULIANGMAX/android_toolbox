@@ -33,7 +33,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.max.toolbox.OpenDoorActivity" >
+        <activity android:name="com.max.toolbox.activity.OpenDoorActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -41,7 +41,9 @@
             </intent-filter>
         </activity>
         <activity android:name="com.max.toolbox.MainActivity" />
-        <activity android:name="com.max.toolbox.DragListActivity" />
+        <activity android:name="com.max.toolbox.activity.DragListActivity" />
+        <activity android:name="com.max.toolbox.activity.FileExplorerActivity" />
+        <activity android:name="com.max.toolbox.activity.PieChartActivity" />
 
         <service
             android:name="com.max.toolbox.services.HeartbeatServic"

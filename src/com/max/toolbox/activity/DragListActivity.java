@@ -1,10 +1,13 @@
 
-package com.max.toolbox;
+package com.max.toolbox.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 
+import com.max.toolbox.R;
+import com.max.toolbox.R.id;
+import com.max.toolbox.R.layout;
 import com.max.toolbox.view.DragListView;
 
 import java.util.ArrayList;
@@ -17,7 +20,7 @@ public class DragListActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.draglistactivity);
+        setContentView(R.layout.activity_draglist);
 
         arrayList.add("临啊的送风随碟附送的飞");
         arrayList.add("兵去委屈委屈委屈委屈委屈");

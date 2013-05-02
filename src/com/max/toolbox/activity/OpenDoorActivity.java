@@ -1,5 +1,5 @@
 
-package com.max.toolbox;
+package com.max.toolbox.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,6 +12,12 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+import com.max.toolbox.MainActivity;
+import com.max.toolbox.R;
+import com.max.toolbox.R.anim;
+import com.max.toolbox.R.id;
+import com.max.toolbox.R.layout;
+
 public class OpenDoorActivity extends Activity {
 
     private LinearLayout layout;
@@ -22,7 +28,7 @@ public class OpenDoorActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.opendoor);
+        setContentView(R.layout.activity_opendoor);
         initViews();
     }
 

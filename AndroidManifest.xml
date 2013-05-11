@@ -46,7 +46,7 @@
         <activity android:name="com.max.toolbox.activities.PieChartActivity" />
 
         <service
-            android:name="com.max.toolbox.services.HeartbeatServic"
+            android:name="com.max.toolbox.services.HeartbeatService"
             android:exported="false"
             android:persistent="true" >
             <intent-filter>

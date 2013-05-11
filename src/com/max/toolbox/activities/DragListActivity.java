@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 
 import com.max.toolbox.R;
-import com.max.toolbox.R.id;
-import com.max.toolbox.R.layout;
 import com.max.toolbox.view.DragListView;
 
 import java.util.ArrayList;
@@ -15,7 +13,7 @@ import java.util.ArrayList;
 public class DragListActivity extends Activity {
 
     private DragListView dragListView;
-    private ArrayList<String> arrayList = new ArrayList<String>();
+    private final ArrayList<String> arrayList = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

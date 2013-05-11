@@ -14,9 +14,6 @@ import android.widget.RelativeLayout;
 
 import com.max.toolbox.MainActivity;
 import com.max.toolbox.R;
-import com.max.toolbox.R.anim;
-import com.max.toolbox.R.id;
-import com.max.toolbox.R.layout;
 
 public class OpenDoorActivity extends Activity {
 

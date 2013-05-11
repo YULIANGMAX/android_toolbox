@@ -19,22 +19,22 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
+        // setContentView(R.layout.activity_main);
         startRecVoice();
-//        startHeartbeatService();
-        
+        // startHeartbeatService();
+
     }
-    
+
     private void startRecVoice() {
         setContentView(R.layout.activity_recvoice);
-        String path = Environment.getExternalStorageDirectory().toString()+"/ttt/xxx/ddd/rrr/4.aac";
+        String path = Environment.getExternalStorageDirectory().toString() + "/ttt/xxx/ddd/rrr/4.aac";
         final MediaUtil mediaUtil = new MediaUtil();
         mediaUtil.recVoice(path);
-        
-        Button start,stop;
+
+        Button start, stop;
         start = (Button) findViewById(R.id.start);
         start.setOnClickListener(new OnClickListener() {
-            
+
             @Override
             public void onClick(View v) {
                 try {
@@ -46,18 +46,19 @@ public class MainActivity extends Activity {
         });
         stop = (Button) findViewById(R.id.stop);
         stop.setOnClickListener(new OnClickListener() {
-            
+
             @Override
             public void onClick(View v) {
                 mediaUtil.stopRec();
             }
         });
     }
-    
+
+    @SuppressWarnings("unused")
     private void startHeartbeatService() {
-        Intent serviceIntent = new Intent("HeartbeatService");  
-        serviceIntent.putExtra("url","http://www.xxx.com");  
-        startService(serviceIntent);  
+        Intent serviceIntent = new Intent("HeartbeatService");
+        serviceIntent.putExtra("url", "http://www.xxx.com");
+        startService(serviceIntent);
     }
 
     @Override

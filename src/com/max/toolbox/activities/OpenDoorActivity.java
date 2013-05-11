@@ -1,5 +1,5 @@
 
-package com.max.toolbox.activity;
+package com.max.toolbox.activities;
 
 import android.app.Activity;
 import android.content.Intent;

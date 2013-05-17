@@ -13,7 +13,7 @@ import android.widget.Button;
 import com.max.toolbox.utils.MediaUtil;
 
 import java.io.IOException;
-//dsasdasda
+
 public class MainActivity extends Activity {
 
     @Override

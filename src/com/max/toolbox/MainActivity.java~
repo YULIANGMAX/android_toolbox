@@ -14,7 +14,6 @@ import com.max.toolbox.utils.MediaUtil;
 
 import java.io.IOException;
 //dsasdasda
-//1
 public class MainActivity extends Activity {
 
     @Override

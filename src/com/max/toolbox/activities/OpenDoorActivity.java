@@ -34,12 +34,8 @@ public class OpenDoorActivity extends Activity {
         btn_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.btn_start:
-                        doOpenDoor();
-                        break;
-                    default:
-                        break;
+                if (R.id.btn_start == v.getId()) {
+                    doOpenDoor();
                 }
             }
 

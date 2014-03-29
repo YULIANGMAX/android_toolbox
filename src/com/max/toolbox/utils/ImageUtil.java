@@ -122,6 +122,7 @@ public class ImageUtil {
      * @param bitmap Bitmap对象
      * @return Drawable对象
      */
+    @SuppressWarnings("deprecation")
     public static Drawable bitmap2drawable(Bitmap bitmap) {
         if (bitmap == null) {
             return null;
